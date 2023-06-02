@@ -1,4 +1,4 @@
-public class CuentaComitente  extends Cuenta {
+public class CuentaComitente extends Cuenta {
     private String cnv;
 
     public CuentaComitente(Integer numero, Cliente cliente, String cnv) {
@@ -22,7 +22,8 @@ public class CuentaComitente  extends Cuenta {
             System.out.println("Su saldo es insuficiente para ejecutar esta operacion");
         }
     }
-    public void extraer (Double monto, String cnv) {
+
+    public void extraer(Double monto, String cnv) {
         if (this.cnv.equals(cnv)) {
             if (monto <= saldo) {
                 System.out.println("saldo anterior: $" + saldo);

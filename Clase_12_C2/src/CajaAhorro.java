@@ -5,9 +5,10 @@ public class CajaAhorro extends Cuenta {
         super(numero, cliente);
         this.tasaInteres = tasaInteres;
     }
+
     @Override
     public void extraer(Double monto) {
-        if (monto <= saldo){
+        if (monto <= saldo) {
             System.out.println("saldo anterior: $" + saldo);
             System.out.println("monto retiro: $" + monto);
             saldo -= monto;
@@ -16,7 +17,8 @@ public class CajaAhorro extends Cuenta {
             System.out.println("Su saldo es insuficiente para ejecutar esta operacion");
         }
     }
-    public void cobrarIntereses (){
+
+    public void cobrarIntereses() {
         System.out.println("saldo anterior: $" + saldo);
         Double intereses = saldo * tasaInteres / 100;
         System.out.println("monto intereses: $" + intereses);
