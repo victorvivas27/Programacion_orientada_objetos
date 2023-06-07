@@ -12,4 +12,8 @@ public abstract class Animal {
 
     }
 
+    @Override
+    public String toString() {
+        return "El animal se llama "+ nombre + " Y tiene de " + energia + " de energia " ;
+    }
 }
