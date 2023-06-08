@@ -1,30 +1,34 @@
 public class Parcial extends Examen {
     private Integer unidades;
-    private Integer cantidadDeIntentos;
+    private Integer cantidadReintentos;
 
-    public Parcial(Alumno alumno, String titulo, String enunciado, Double nota, Integer unidades, Integer cantidadDeintentos) {
+    public Parcial(Alumno alumno, String titulo, String enunciado, Double nota,
+                   Integer unidades, Integer cantidadReintentos) {
         super(alumno, titulo, enunciado, nota);
         this.unidades = unidades;
-        this.cantidadDeIntentos = cantidadDeIntentos;
+        this.cantidadReintentos = cantidadReintentos;
     }
 
     @Override
     public Boolean aprobado() {
+
         return getNota() >= 4;
     }
 
     public boolean esRecuperable() {
+        Boolean recuperable = false;
         if (aprobado()) {
-            return false;
-        } else if (unidades <= 3 && cantidadDeIntentos < 3) {
-            return true;
-        } else if (unidades > 3 && cantidadDeIntentos > 2) {
-            return true;
-        } else {
-            return false;
+            recuperable = false;
+        } else if (unidades <= 3 && cantidadReintentos <= 3) {
+            recuperable = true;
+        } else if (unidades > 3 && cantidadReintentos > 2) {
+            recuperable = true;
+        }
+            return recuperable;
         }
     }
-}
+
+
 
 
 

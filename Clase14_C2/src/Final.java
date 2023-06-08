@@ -8,6 +8,7 @@ public class Final extends Examen implements Comparable {
         this.descripcionOral = descripcionOral;
     }
 
+
     @Override
     public Boolean aprobado() {
         return getNota() >= 4 && notaOral >= 4;
@@ -18,14 +19,14 @@ public class Final extends Examen implements Comparable {
         Final otroFinal = (Final) obj;
         if (promedio() > otroFinal.promedio()) {
             return 1;
-        } else if (promedio() < otroFinal.promedio()) {
+        } else if  (promedio() < otroFinal.promedio()) {
             return -1;
-        } else {
+        }else{
             return 0;
         }
     }
         public Double promedio () {
             return (getNota() + notaOral) / 2;
         }
+    }
 
-}

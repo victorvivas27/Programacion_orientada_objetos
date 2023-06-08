@@ -1,9 +1,8 @@
-public  abstract class Examen {
+public abstract class Examen {
     public Alumno alumno;
-
-    private String titulo ;
-    private  String enunciado;
-    private  Double nota;
+    private String titulo;
+    private String enunciado;
+    private Double nota;
 
     public Examen(Alumno alumno, String titulo, String enunciado, Double nota) {
         this.alumno = alumno;
@@ -12,9 +11,10 @@ public  abstract class Examen {
         this.nota = nota;
     }
 
-    public abstract Boolean aprobado ();
+    public abstract Boolean aprobado();
 
-    public Double getNota() {
+    public Double getNota()
+    {
         return nota;
     }
 }
