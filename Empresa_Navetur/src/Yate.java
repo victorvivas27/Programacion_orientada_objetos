@@ -1,14 +1,13 @@
 public class Yate extends Embarcacion implements Comparable {
     private Integer cantidadCamarotes;
-    private String nombreYate;
 
-    public Yate(Double precioBase, Double valorAdicional, Integer anoFabricacion, Integer longitudEslora,
-                Capitan capitan, Integer cantidadCamarotes, String nombreYate) {
-        super(precioBase, valorAdicional, anoFabricacion, longitudEslora, capitan);
+
+    public Yate(Integer cantidadCamarotes) {
         this.cantidadCamarotes = cantidadCamarotes;
-        this.nombreYate = nombreYate;
+
     }
 
+    /*Sobreescribimos el método compareTo que nos obliga la interface Comparable de Java*/
     @Override
     public int compareTo(Object obj) {
         Yate yate = (Yate) obj;
@@ -30,7 +29,5 @@ public class Yate extends Embarcacion implements Comparable {
         return montoAlquiler;
     }
 
-    public String getNombreYate() {
-        return nombreYate;
-    }
+
 }

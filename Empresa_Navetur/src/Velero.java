@@ -1,25 +1,21 @@
 public class Velero extends Embarcacion {
     private Integer cantidadMastiles;
+    public static final int CANT_MASTILES_VELERO_GRANDE = 4;
 
-    public Velero(Double precioBase, Double valorAdicional, Integer anoFabricacion, Integer longitudEslora,
-                  Capitan capitan, Integer cantidadMastiles) {
-        super(precioBase, valorAdicional, anoFabricacion, longitudEslora, capitan);
+    public int getCantMastiles() {
+        return cantidadMastiles;
+    }
+
+    public void setCantMastiles(Integer cantidadMastiles) {
         this.cantidadMastiles = cantidadMastiles;
     }
 
-    public Boolean esGrande() {
-        return cantidadMastiles > 4;
 
+    public boolean esGrande()
+    {
+        return this.getCantMastiles() > CANT_MASTILES_VELERO_GRANDE;
     }
 
-    @Override
-    public Double calcularMontoAlquiler() {
-        Double montoAlquiler = getPrecioBase();
-        if (getAnoFabricacion() > 2020) {
-            montoAlquiler += getValorAdicional();
-        }
-        return montoAlquiler;
-    }
 
 }
 
